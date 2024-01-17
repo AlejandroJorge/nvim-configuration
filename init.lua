@@ -327,9 +327,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Remap for filetree
-vim.keymap.set('n', '<leader>ft', ":Explore<CR>", { desc = 'File tree' })
-
 -- Remap for make
 vim.keymap.set('n', '<leader>mk', ":!make<CR>", { desc = "Make" })
 
