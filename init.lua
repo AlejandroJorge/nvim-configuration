@@ -330,14 +330,16 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- Remap for make
 vim.keymap.set('n', '<leader>mk', ":!make<CR>", { desc = "Make" })
 
--- Remap for saving buffer
-vim.keymap.set('n', '<leader>sv', ":w<CR>", { desc = "Save" })
+-- Remap for buffers
+vim.keymap.set('n', '<leader>h', '<C-w>h', { desc = 'Go to left vsplit' })
+vim.keymap.set('n', '<leader>l', '<C-w>l', { desc = 'Go to right vsplit' })
+vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = 'Close buffer' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
