@@ -256,7 +256,7 @@ require('lazy').setup({
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
-  --       Uncomment any of the lines below to enable them.
+  -- Uncomment any of the lines below to enable them.
   require 'kickstart.plugins.autoformat',
   require 'kickstart.plugins.debug',
 
@@ -334,6 +334,7 @@ vim.keymap.set('n', '<leader>mk', ":!make<CR>", { desc = "Make" })
 vim.keymap.set('n', '<leader>h', '<C-w>h', { desc = 'Go to left vsplit' })
 vim.keymap.set('n', '<leader>l', '<C-w>l', { desc = 'Go to right vsplit' })
 vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = 'Close buffer' })
+
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
