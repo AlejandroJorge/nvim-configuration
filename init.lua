@@ -190,15 +190,6 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
-
-  {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -286,6 +277,9 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.softtabstop = 2
 
+-- Theme
+vim.cmd.colorscheme 'retrobox'
+
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
@@ -335,6 +329,9 @@ vim.keymap.set('n', '<leader>h', '<C-w>h', { desc = 'Go to left vsplit' })
 vim.keymap.set('n', '<leader>l', '<C-w>l', { desc = 'Go to right vsplit' })
 vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = 'Close buffer' })
 
+-- Remap for scrolling
+vim.keymap.set('n', '<C-d>', '<C-d>zz', {})
+vim.keymap.set('n', '<C-u>', '<C-u>zz', {})
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
