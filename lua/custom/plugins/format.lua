@@ -15,6 +15,15 @@ return {
         },
         typescriptreact = {
           require("formatter.filetypes.typescriptreact").prettier
+        },
+        json = {
+          require("formatter.filetypes.json").prettier
+        },
+        css = {
+          require("formatter.filetypes.css").prettier
+        },
+        html = {
+          require("formatter.filetypes.html").prettier
         }
       }
     })

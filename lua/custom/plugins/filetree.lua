@@ -8,7 +8,6 @@ return {
     -- set termguicolors to enable highlight groups
     vim.opt.termguicolors = true
 
-    -- OR setup with some options
     require("nvim-tree").setup({
       sort = {
         sorter = "case_sensitive",
@@ -22,6 +21,10 @@ return {
       filters = {
         dotfiles = true,
       },
+    })
+
+    vim.api.nvim_create_autocmd({ "QuitPre" }, {
+      callback = function() vim.cmd("NvimTreeClose") end,
     })
 
 
