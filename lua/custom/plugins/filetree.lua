@@ -17,7 +17,6 @@ return {
       -- Custom mappings
       vim.keymap.set('n', '<leader>tr', ':NvimTreeRefresh<CR>', opts('Refresh'))                    -- Refresh tree
       vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
-      vim.keymap.set('n', '<leader>tt', ':NvimTreeToggle<CR>', opts('Toggle'))                      -- Toggle tree
       vim.keymap.set('n', '<leader>ct', ':NvimTreeClose<CR>', opts('Close'))                        -- Close tree
       vim.keymap.set('n', '<leader>cr', api.tree.change_root_to_node, opts('Change root'))          -- Change root
       vim.keymap.set('n', '<leader>cf', api.fs.create, opts('Create'))                              -- Create file
@@ -33,20 +32,20 @@ return {
         sorter = "case_sensitive",
       },
       view = {
-        width = 30,
+        width = 40,
         side = "right",
       },
       renderer = {
         group_empty = true,
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,
       },
       on_attach = custom_on_attach,
-
     })
 
-    vim.keymap.set('n', '<leader>ft', ':NvimTreeFocus<CR>') -- Focus tree
+    vim.keymap.set('n', '<leader>ft', ':NvimTreeFocus<CR>')  -- Focus tree
+    vim.keymap.set('n', '<leader>tt', ':NvimTreeToggle<CR>') -- Toggle tree
 
     vim.api.nvim_create_autocmd({ "QuitPre" }, {
       callback = function() vim.cmd("NvimTreeClose") end,
