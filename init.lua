@@ -263,9 +263,6 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.softtabstop = 2
 
--- Theme
-vim.cmd.colorscheme 'retrobox'
-
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
