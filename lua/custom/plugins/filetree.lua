@@ -21,6 +21,7 @@ return {
       vim.keymap.set('n', '<leader>cr', api.tree.change_root_to_node, opts('Change root'))          -- Change root
       vim.keymap.set('n', '<leader>cf', api.fs.create, opts('Create'))                              -- Create file
       vim.keymap.set('n', '<leader>rn', api.fs.rename_sub, opts('Rename'))                          -- Rename
+      vim.keymap.set('n', '<leader>rm', api.fs.remove, opts('Remove'))                              -- Remove
       vim.keymap.set('n', '<leader>vs', api.node.open.vertical)                                     -- Vertical split
       vim.keymap.set('n', '<leader>pf', api.node.navigate.parent)                                   -- Parent folder
       vim.keymap.set('n', '<leader>hf', api.tree.toggle_hidden_filter, opts('Toggle hidden'))       -- Toggle hidden files
