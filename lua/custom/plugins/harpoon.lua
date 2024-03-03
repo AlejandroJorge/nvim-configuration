@@ -14,11 +14,11 @@ return {
       api.mark.add_file()
     end)
 
-    vim.keymap.set("n", "<leader>hr", function(bufnr)
+    vim.keymap.set("n", "<leader>hc", function(bufnr)
       api.mark.rm_file(bufnr)
     end)
 
-    vim.keymap.set("n", "<leader>hR", function()
+    vim.keymap.set("n", "<leader>hC", function()
       api.mark.clear_all()
     end)
 
