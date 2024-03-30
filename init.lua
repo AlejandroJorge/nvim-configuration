@@ -181,11 +181,19 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
+      sections = {
+        lualine_a = { 'branch' },
+        lualine_b = { { 'filename', path = 1 } },
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = { 'location' },
+      }
     },
   },
 
@@ -310,9 +318,15 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<leader>mk', ":!make<CR>", { desc = "Make" })
 
 -- Remap for buffers
-vim.keymap.set('n', '<leader>h', '<C-w>h', { desc = 'Go to left vsplit' })
-vim.keymap.set('n', '<leader>l', '<C-w>l', { desc = 'Go to right vsplit' })
 vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = 'Close buffer' })
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Save buffer' })
+vim.keymap.set('n', '<leader>vn', ':vnew<CR>', { desc = 'New vertical buffer' })
+
+-- Remap for showing path to current file
+vim.keymap.set('n', '<leader>fp', ':f<CR>', { desc = "Show path to current file" })
+
+-- Remap for restarting LSP
+vim.keymap.set('n', '<leader>rl', '<cmd>LspRestart<CR>', { desc = 'Restart LSP' })
 
 -- Remap for scrolling
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {})
